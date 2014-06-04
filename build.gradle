@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile 'org.apache.poi:poi:3.10-FINAL'
+	compile 'org.apache.poi:poi-ooxml:3.10-FINAL'
+	
+	runtime 'org.apache.poi:poi:3.10-FINAL'
+	runtime 'org.apache.poi:poi-ooxml:3.10-FINAL'
+	testCompile 'junit:junit:4.11'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.12'
+}
